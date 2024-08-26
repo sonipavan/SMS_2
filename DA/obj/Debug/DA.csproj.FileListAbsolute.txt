@@ -1,0 +1,14 @@
+E:\MAUI_Project\SMS_2\DA\bin\Debug\DA.dll
+E:\MAUI_Project\SMS_2\DA\bin\Debug\DA.pdb
+E:\MAUI_Project\SMS_2\DA\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.dll
+E:\MAUI_Project\SMS_2\DA\bin\Debug\Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.dll
+E:\MAUI_Project\SMS_2\DA\bin\Debug\Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.Logging.dll
+E:\MAUI_Project\SMS_2\DA\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Logging.Database.dll
+E:\MAUI_Project\SMS_2\DA\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Logging.dll
+E:\MAUI_Project\SMS_2\DA\bin\Debug\Microsoft.Practices.ObjectBuilder2.dll
+E:\MAUI_Project\SMS_2\DA\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.dll
+E:\MAUI_Project\SMS_2\DA\obj\Debug\DA.csproj.AssemblyReference.cache
+E:\MAUI_Project\SMS_2\DA\obj\Debug\DA.csproj.CoreCompileInputs.cache
+E:\MAUI_Project\SMS_2\DA\obj\Debug\DA.csproj.CopyComplete
+E:\MAUI_Project\SMS_2\DA\obj\Debug\DA.dll
+E:\MAUI_Project\SMS_2\DA\obj\Debug\DA.pdb
