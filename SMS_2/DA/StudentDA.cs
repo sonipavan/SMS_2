@@ -9,7 +9,7 @@ using System.Configuration;
 using SMS_2.Models;
 namespace DA.DA
 {
-    
+
     //public class Student
     //{
     //    public int StudentId { get; set; }
@@ -67,5 +67,60 @@ namespace DA.DA
 
             return students;
         }
+
+
+        public string InsertUpdateStudent(int? studentId = null)
+        {
+            try
+            {
+                string result = string.Empty;
+
+                // Create a new instance of the SqlConnection
+                using (SqlConnection connection = new SqlConnection(_connectionString))
+                {
+                    // Define the stored procedure name
+                    string storedProcedureName = "StudentInsertUpdate";
+
+                    // Create a SqlCommand to call the stored procedure
+                    using (SqlCommand command = new SqlCommand(storedProcedureName, connection))
+                    {
+                        // Set the command type to stored procedure
+                        command.CommandType = CommandType.StoredProcedure;
+
+                        // Add parameters to the command
+                        command.Parameters.Add(new SqlParameter("@StudentID", SqlDbType.Int)).Value = (object)1 ?? DBNull.Value; // Replace 1 with actual value
+                        command.Parameters.Add(new SqlParameter("@FirstName", SqlDbType.NVarChar, 50)).Value = (object)"John" ?? DBNull.Value; // Replace "John" with actual value
+                        command.Parameters.Add(new SqlParameter("@LastName", SqlDbType.NVarChar, 50)).Value = (object)"Doe" ?? DBNull.Value; // Replace "Doe" with actual value
+                        command.Parameters.Add(new SqlParameter("@DateOfBirth", SqlDbType.Date)).Value = (object)DateTime.Parse("2000-01-01") ?? DBNull.Value; // Replace date with actual value
+                        command.Parameters.Add(new SqlParameter("@Email", SqlDbType.NVarChar, 100)).Value = (object)"john.doe@example.com" ?? DBNull.Value; // Replace email with actual value
+                        command.Parameters.Add(new SqlParameter("@PhoneNumber", SqlDbType.NVarChar, 15)).Value = (object)"123-456-7890" ?? DBNull.Value; // Replace phone number with actual value
+                        command.Parameters.Add(new SqlParameter("@Gender", SqlDbType.NVarChar, 100)).Value = (object)"Male" ?? DBNull.Value; // Replace gender with actual value
+                        command.Parameters.Add(new SqlParameter("@EnrollmentDate", SqlDbType.NVarChar, 200)).Value = (object)"2024-08-27" ?? DBNull.Value; // Replace enrollment date with actual value
+                        command.Parameters.Add(new SqlParameter("@Address", SqlDbType.NVarChar, 200)).Value = (object)"123 Main St, Anytown" ?? DBNull.Value; // Replace address with actual value
+
+                        // Open the connection
+                        connection.Open();
+
+                        // Execute the stored procedure and retrieve the result
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            if (reader.Read())
+                            {
+                                // Read the flag value from the result set
+                                 result = reader["flag"].ToString();
+                                
+                            }
+                        }
+                    }
+                }
+                return result;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
     }
 }
